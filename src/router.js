@@ -3,4 +3,13 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
-export default new VueRouter();
+const Router = new VueRouter();
+
+Router.map({
+  '/': {
+    name: 'index',
+    component: {},
+  },
+});
+
+export default Router;
