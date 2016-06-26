@@ -1,7 +1,7 @@
 <template>
 <aside id="left-sidebar-nav">
   <ul id="slide-out" class="side-nav fixed leftside-navigation ps-container ps-active-y">
-    <li><a href="index.html" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> Dashboard</a></li>
+    <li><a href="#/" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> Dashboard</a></li>
     <li class="no-padding">
       <ul class="collapsible collapsible-accordion">
         <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-view-carousel"></i> Angularjs</a>
