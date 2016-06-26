@@ -1,10 +1,14 @@
 <template>
-  <div>
+<div id="main">
+  <div class="wrapper">
     <ui-sidebar></ui-sidebar>
-    <section>
-      <router-view></router-view>
+    <section class="content">
+      <div class="container">
+        <router-view></router-view>
+      </div>
     </section>
   </div>
+</div>
 </template>
 
 <script>
