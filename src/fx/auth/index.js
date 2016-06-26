@@ -35,4 +35,14 @@ class AuthProvider {
   }
 }
 
-export default new AuthProvider();
+const auth = new AuthProvider();
+
+import Vue from 'vue';
+
+Vue.mixin({
+  created: function handler() {
+    this.$auth = auth;
+  },
+});
+
+export default auth;
