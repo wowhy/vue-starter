@@ -1,0 +1,15 @@
+body {
+  font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans","wenquanyi micro hei","Hiragino Sans GB", "Hiragino Sans GB W3", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul.side-nav.fixed li a{
+  font-size: 13px;
+  line-height: 44px;
+  height: 44px;
+}
+
+ul.side-nav.fixed li{
+  line-height: 44px;
+}

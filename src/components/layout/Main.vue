@@ -2,8 +2,8 @@
   <div>
     <ui-sidebar></ui-sidebar>
     <main>
-      <nav class="top-nav page-header">
-        <div class="nav-wrapper"><a class="page-title">Page Head</a></div>
+      <nav class="top-nav page-header grey lighten-5">
+        <div class="nav-wrapper"><a class="page-title black-text text-darken-2">Page Head</a></div>
       </nav>
       <div class="content">
         <router-view></router-view>
