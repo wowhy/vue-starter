@@ -1,14 +1,12 @@
 <template>
-  <div class="sidebar">
-    <div class="container">
-      <a href="#" data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-light circle hide-on-large-only"><i class="material-icons">menu</i></a>
-    </div>
-    <ul id="nav-mobile" class="side-nav fixed" style="transform: translateX(0px);">
+  <aside class="sidebar-panel">
+    <ul class="side-nav fixed menus" style="transform: translateX(0px);">
       <li class="logo">
-        <a id="logo-container" href="#/" class="brand-logo">
-          LOGO
+        <a href="#/" class="brand-logo">
+          WOWHY
         </a>
       </li>
+      
       <li class="bold"><a href="#/" class="waves-effect waves-teal">About</a></li>
       <li class="bold active"><a href="#/" class="waves-effect waves-teal">Getting Started</a></li>
       <li class="no-padding">
@@ -49,7 +47,7 @@
       </li>
       <li class="bold"><a href="#/" class="waves-effect waves-teal">Mobile</a></li>
     </ul>
-  </div>
+  </aside>
 </template>
 
 <script>
@@ -58,4 +56,17 @@
 </script>
 
 <style scoped>
+  .sidebar-panel ul.menus li a {
+    font-size: 13px;
+    line-height: 44px;
+    height: 44px;
+  }
+  
+  .sidebar-panel ul.menus li {
+    line-height: 44px;
+  }
+  
+  li.logo a:hover {
+    background-color: transparent;
+  }
 </style>

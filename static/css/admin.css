@@ -3,13 +3,3 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-ul.side-nav.fixed li a{
-  font-size: 13px;
-  line-height: 44px;
-  height: 44px;
-}
-
-ul.side-nav.fixed li{
-  line-height: 44px;
-}

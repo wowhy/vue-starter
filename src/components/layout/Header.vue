@@ -21,6 +21,6 @@
   
   header > .top-nav {
     padding-left: 10px;
-    height: 60px;
+    height: 40px;
   }
 </style>
