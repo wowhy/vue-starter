@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrapper">
     <ui-header></ui-header>
     <ui-main></ui-main>
     <ui-footer></ui-footer>
