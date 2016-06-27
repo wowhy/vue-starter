@@ -11,6 +11,7 @@ module.exports = {
   // add your custom rules here
   'rules': {
     'import/no-unresolved': 0,
+    "no-trailing-spaces": ["error", { "skipBlankLines": true }],
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
   }

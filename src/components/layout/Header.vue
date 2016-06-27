@@ -14,13 +14,9 @@
 
 </script>
 
-<style scoped>
-  header {
-    padding-left: 240px;
-  } 
-  
+<style scoped>  
   header > .top-nav {
     padding-left: 10px;
-    height: 40px;
+    height: 55px;
   }
 </style>
