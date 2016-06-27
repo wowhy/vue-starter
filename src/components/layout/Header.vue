@@ -12,6 +12,8 @@
 
 </script>
 
-<style>
-
+<style scoped>
+  header {
+    padding-left: 240px;
+  }
 </style>
