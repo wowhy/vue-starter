@@ -1,5 +1,5 @@
 <template>
-  <div class="container container-table">
+  <div>
     <div class="row vertical-10p">
       <div class="container">
         <img src="/static/img/logo.png" class="center-block logo">

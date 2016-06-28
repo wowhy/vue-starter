@@ -3,5 +3,9 @@ export default {
     const $ = window.$;
     $('.dropdown-button').dropdown();
     $('.collapsible').collapsible();
+
+    setTimeout(() => {
+      $('body').addClass('loaded');
+    }, 200);
   },
 };

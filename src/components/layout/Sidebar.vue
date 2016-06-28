@@ -23,7 +23,8 @@
                   </div>
               </div>
           </li>
-          <li class="bold active"><a href="index.html" class="waves-effect waves-cyan"><i class="material-icons">dashboard</i> Dashboard</a>
+          <li class="bold active">
+            <a href="#/home" class="waves-effect waves-cyan"><i class="material-icons">dashboard</i> Dashboard</a>
           </li>
           <li class="no-padding">
               <ul class="collapsible collapsible-accordion">

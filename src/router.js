@@ -1,15 +1,14 @@
-import PageNotFound from './components/404';
+import PageNotFound from 'components/404';
+import Home from 'components/Home';
 
 const VueRouter = window.VueRouter;
 
 const Router = new VueRouter();
 
 Router.map({
-  '': {
-    name: 'index',
-    component: {
-      template: '<md-button class="waves-effect waves-light">Hello, world!</ui-button>',
-    },
+  '/home': {
+    name: 'home',
+    component: Home,
   },
   404: {
     name: '404',
@@ -18,7 +17,7 @@ Router.map({
 });
 
 Router.redirect({
-  '*': '/404',
+  '*': '/home',
 });
 
 export default Router;
