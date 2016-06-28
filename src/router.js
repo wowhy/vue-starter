@@ -1,9 +1,6 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-
 import PageNotFound from './components/404';
 
-Vue.use(VueRouter);
+const VueRouter = window.VueRouter;
 
 const Router = new VueRouter();
 
@@ -11,7 +8,7 @@ Router.map({
   '': {
     name: 'index',
     component: {
-      template: '<ui-button color=primary>Hello, world!</ui-button>',
+      template: '<md-button class="waves-effect waves-light">Hello, world!</ui-button>',
     },
   },
   404: {

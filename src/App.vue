@@ -12,9 +12,9 @@
   import PageMain from './components/layout/Main';
   import PageFooter from './components/layout/Footer';
   import PagePreLoader from './components/layout/PreLoader';
-  
+
   import Plugins from './fx/plugins';
-  
+
   export default {
     components: {
       PageHeader,
@@ -34,7 +34,7 @@
       }, 500);
     },
   };
-
+  
 </script>
 
 <style>
