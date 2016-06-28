@@ -33,7 +33,7 @@
 
 <script>
   import UiSidebar from './Sidebar';
-  
+
   export default {
     components: {
       UiSidebar,
@@ -46,7 +46,7 @@
   main {
     padding-left: 240px;
   }
-  
+
   .content {
     padding: 10px;
   }

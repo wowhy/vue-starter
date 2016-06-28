@@ -14,11 +14,10 @@
   },
   "dependencies": {
     "babel-runtime": "^6.0.0",
+    "material-ui-vue": "^0.1.4",
     "vue": "^1.0.21",
     "vue-resource": "^0.8.0",
-    "vue-router": "^0.7.13",
-    "vue-material-components": "*",
-    "keen-ui": "*"
+    "vue-router": "^0.7.13"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",

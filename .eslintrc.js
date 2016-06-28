@@ -11,8 +11,15 @@ module.exports = {
   // add your custom rules here
   'rules': {
     'import/no-unresolved': 0,
-    "no-trailing-spaces": ["error", { "skipBlankLines": true }],
+    "no-trailing-spaces": ["error", {
+      "skipBlankLines": true
+    }],
+    "indent": "off",
+    "comma-dangle": ["error", "only-multiline"],
+    "eol-last": "off",
+    "no-use-before-define": ["error", {"functions": false, "classes": false}],
+
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
   }
-}
+};

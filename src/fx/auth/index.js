@@ -1,38 +1,38 @@
 class AuthProvider {
-  constructor() {
-    this.user = null;
-    this.token = null;
-  }
+    constructor() {
+        this.user = null;
+        this.token = null;
+    }
 
-  init(router) {
-    router.beforeEach(transition => {
-      if (transition.to.guest || this.check()) {
-        transition.next();
-      } else {
-        transition.abort();
-      }
-    });
-  }
+    init(router) {
+        router.beforeEach(transition => {
+            if (transition.to.guest || this.check()) {
+                transition.next();
+            } else {
+                transition.abort();
+            }
+        });
+    }
 
-  check() {
-    return true;
-  }
+    check() {
+        return true;
+    }
 
-  getCurrentUser() {
-    return this.user;
-  }
+    getCurrentUser() {
+        return this.user;
+    }
 
-  setCurrentUser(user) {
-    this.user = user;
-  }
+    setCurrentUser(user) {
+        this.user = user;
+    }
 
-  getToken() {
-    return this.token;
-  }
+    getToken() {
+        return this.token;
+    }
 
-  setToken(token) {
-    this.token = token;
-  }
+    setToken(token) {
+        this.token = token;
+    }
 }
 
 export default new AuthProvider();
