@@ -32,10 +32,4 @@ const application = Vue.extend({
   }
 });
 
-Vue.mixin({
-  created: function handler() {
-    this.$auth = Auth;
-  },
-});
-
 Router.start(application, 'html');
