@@ -154,3 +154,12 @@ body {
 #sidenav-overlay {
   background-color: transparent;
 }
+
+/*----------------------------------------
+    Form
+  ------------------------------------------*/
+.input-field .prefix {
+  height: 45px;
+  width: 45px;
+  line-height: 45px;
+}

@@ -10,11 +10,11 @@
         </a>
       </ui-nav-item>
       <ui-nav-collapsible-item>
-        <ui-collapsible-header class="waves-effect waves-teal" label="dropdown menu"
+        <ui-collapsible-header class="waves-effect waves-teal" label="Pages"
                                icon="dashboard"></ui-collapsible-header>
         <ui-collapsible-body>
           <ul>
-            <ui-nav-item><a href="#!">Link 3</a></ui-nav-item>
+            <ui-nav-item><a v-link="{ path: '/login' }">Login</a></ui-nav-item>
             <ui-nav-item><a href="#!">Link 4</a></ui-nav-item>
           </ul>
         </ui-collapsible-body>
