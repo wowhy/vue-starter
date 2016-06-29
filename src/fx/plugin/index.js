@@ -1,8 +1,12 @@
 import Vue from 'vue';
 import UI from 'material-ui-vue';
 
-export default {
-  init: function handler() {
+class PluginHelper {
+  constructor() {
+    this.init();
+  }
+
+  init() {
     const $ = window.$;
 
     setTimeout(() => {
@@ -20,4 +24,14 @@ export default {
       Vue.component(name, component);
     }
   }
-};
+
+  initComponent(el) {
+    const query = window.$(el || 'body');
+
+    query.find('.dropdown-button').dropdown();
+    query.find('.collapsible').collapsible();
+  }
+}
+
+
+export default new PluginHelper();

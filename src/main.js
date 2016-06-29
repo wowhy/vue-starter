@@ -4,11 +4,11 @@ import VueResource from 'vue-resource';
 import Auth from './fx/auth';
 import App from './App.vue';
 import Router from './router';
-import Plugins from './fx/plugins';
+import Plugin from './fx/plugin';
 
 Vue.config.devtools = true;
 Vue.use(VueResource);
-Plugins.init();
+
 Auth.init(Router);
 
 const application = Vue.extend({
@@ -26,6 +26,10 @@ const application = Vue.extend({
       this.pageTitle = title;
     },
   },
+
+  ready() {
+    Plugin.initComponent(this.$el);
+  }
 });
 
 Vue.mixin({
