@@ -33,5 +33,4 @@ class PluginHelper {
   }
 }
 
-
 export default new PluginHelper();

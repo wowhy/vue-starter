@@ -10,7 +10,7 @@
   import PageHeader from 'components/layout/Header';
   import PageMain from 'components/layout/Main';
   import PageFooter from 'components/layout/Footer';
-  
+
   export default {
     components: {
       PageHeader,

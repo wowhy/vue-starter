@@ -2,12 +2,8 @@
   <main>
     <div class="wrapper">
       <ui-sidebar></ui-sidebar>
-      <section class="content">
+      <section class="page-content">
         <div class="breadcrumbs-wrapper">
-          <div class="header-search-wrapper grey hide-on-large-only">
-            <i class="mdi-action-search active"></i>
-            <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize">
-          </div>
           <div class="container-fluid">
             <div class="row">
               <div class="col s12 m12 l12">
@@ -47,7 +43,13 @@
     padding-left: 240px;
   }
 
-  .content {
+  @media only screen and (max-width: 993px) {
+    main {
+      padding-left: 0;
+    }
+  }
+
+  .page-content {
     padding: 10px;
   }
 </style>

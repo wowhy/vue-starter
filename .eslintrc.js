@@ -18,6 +18,7 @@ module.exports = {
     "comma-dangle": ["error", "only-multiline"],
     "eol-last": "off",
     "no-use-before-define": ["error", {"functions": false, "classes": false}],
+    "object-curly-spacing": "off",
 
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
