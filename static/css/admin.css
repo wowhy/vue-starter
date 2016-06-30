@@ -4,6 +4,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.margin {
+  margin: 0 !important;
+}
+
 /*----------------------------------------
     Pre-loader
   ------------------------------------------*/

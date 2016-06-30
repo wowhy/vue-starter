@@ -5,8 +5,8 @@
 
       <ui-nav-item>
         <a href="#/home" class="waves-effect waves-teal">
-          <ui-icon value="dashboard"></ui-icon>
-          Dashboard
+          <ui-icon value="home"></ui-icon>
+          Home
         </a>
       </ui-nav-item>
       <ui-nav-collapsible-item>
@@ -36,6 +36,14 @@
   export default {
     components: {
       UserDetails
+    },
+
+    data: function handler() {
+      return {
+        menus: [
+          {text: '', icon: '', link: {}}
+        ]
+      };
     },
 
     ready: function handler() {
