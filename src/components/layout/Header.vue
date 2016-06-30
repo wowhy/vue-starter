@@ -10,7 +10,7 @@
 
 </script>
 
-<style scoped>
+<style>
   header > .top-nav {
     padding-left: 10px;
     height: 55px;

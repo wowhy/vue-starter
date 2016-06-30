@@ -2,7 +2,7 @@
   <main>
     <div class="wrapper">
       <ui-sidebar></ui-sidebar>
-      <section class="page-content">
+      <section class="page">
         <div class="breadcrumbs-wrapper">
           <div class="container-fluid">
             <div class="row">
@@ -20,7 +20,7 @@
           </div>
         </div>
         <div class="container-fluid">
-          <router-view></router-view>
+          <router-view class="page-content"></router-view>
         </div>
       </section>
     </div>
@@ -38,7 +38,7 @@
 
 </script>
 
-<style scoped>
+<style>
   main {
     padding-left: 240px;
   }
@@ -49,7 +49,7 @@
     }
   }
 
-  .page-content {
+  .page {
     padding: 10px;
   }
 

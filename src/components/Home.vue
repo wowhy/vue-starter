@@ -5,11 +5,15 @@
   </div>
 </template>
 <script>
-    export default {
-      name: 'Home'
-    };
+  export default {
+    name: 'Home',
+    data() {
+      return {
+        show: false
+      };
+    }
+  };
 </script>
 
 <style>
-
 </style>

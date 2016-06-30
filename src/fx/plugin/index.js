@@ -13,6 +13,7 @@ class PluginHelper {
       $('body').addClass('loaded');
     }, 200);
 
+    // 注册组件
     /* eslint no-restricted-syntax: "off" */
     for (const prop in UI) {
       if ({}.hasOwnProperty.call(UI, prop)) {
