@@ -9,7 +9,7 @@ import Plugin from './fx/plugin';
 Vue.config.devtools = true;
 Vue.use(VueResource);
 
-Auth.init(Router);
+Auth.init(Vue, Router);
 
 const application = Vue.extend({
   components: {
@@ -17,6 +17,7 @@ const application = Vue.extend({
   },
   data() {
     return {
+      $auth: Auth,
       pageTitle: null
     };
   },

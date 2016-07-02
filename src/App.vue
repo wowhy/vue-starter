@@ -1,32 +1,36 @@
 <template>
-  <div class="body-wrapper">
-    <page-header></page-header>
-    <page-main></page-main>
-    <page-footer></page-footer>
-  </div>
+  <component :is="currentView">
+  </component>
 </template>
 
 <script>
-  import PageHeader from 'components/layout/Header';
-  import PageMain from 'components/layout/Main';
-  import PageFooter from 'components/layout/Footer';
+  import Auth from 'fx/auth'
+  import Workspace from 'components/main/Workspace'
+  import Login from 'components/main/Login'
 
   export default {
+    data() {
+      return {
+        currentView: null
+      };
+    },
     components: {
-      PageHeader,
-      PageMain,
-      PageFooter,
+      Workspace,
+      Login
+    },
+    events: {
+      changeView: function event(view) {
+        this.currentView = view;
+      },
+      notify: function event(/*msg*/) {
+      }
+    },
+    ready() {
+      this.currentView = Auth.check() ? 'workspace' : 'login';
     }
   };
-
 </script>
 
 <style>
-  body {
-    background-color: #f9f9f9;
-  }
 
-  .container-fluid {
-    width: 100%;
-  }
 </style>

@@ -19,6 +19,11 @@ module.exports = {
     "eol-last": "off",
     "no-use-before-define": ["error", {"functions": false, "classes": false}],
     "object-curly-spacing": "off",
+    "spaced-comment": "off",
+    "no-useless-constructor": "off",
+    "func-names": "off",
+    "object-shorthand": "off",
+    "semi": "off",
 
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0

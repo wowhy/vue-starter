@@ -1,5 +1,3 @@
-import Vue from 'vue';
-
 /* eslint no-underscore-dangle: "off" */
 class AuthProvider {
   constructor() {
@@ -13,14 +11,14 @@ class AuthProvider {
     this._token = '123456';
   }
 
-  init(router) {
-    router.beforeEach(transition => {
-      if (transition.to.guest || this.check()) {
-        transition.next();
-      } else {
-        transition.abort();
-      }
-    });
+  init(/*Vue, Router*/) {
+    //Router.beforeEach(transition => {
+    //  if (transition.to.authed === false || this.check()) {
+    //    transition.next();
+    //  } else {
+    //    transition.redirect('/login');
+    //  }
+    //});
   }
 
   check() {
@@ -52,12 +50,4 @@ class AuthProvider {
   }
 }
 
-const auth = new AuthProvider();
-
-Vue.mixin({
-  created: function handler() {
-    this.$auth = auth;
-  }
-});
-
-export default auth;
+export default new AuthProvider();

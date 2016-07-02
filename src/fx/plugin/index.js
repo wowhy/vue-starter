@@ -8,12 +8,6 @@ class PluginHelper {
   }
 
   init() {
-    const $ = window.$;
-
-    setTimeout(() => {
-      $('body').addClass('loaded');
-    }, 200);
-
     this.registerComponents();
     this.registerDirectives();
   }
@@ -40,7 +34,6 @@ class PluginHelper {
   }
 
   registerDirectives() {
-    console.log(Loading);
     Vue.directive('loading', Loading);
   }
 }

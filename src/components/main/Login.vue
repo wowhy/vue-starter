@@ -55,6 +55,7 @@
     extends: PageBase,
 
     name: 'login',
+    authed: false,
     methods: {
       onLoginClick: function handler() {
         Auth.login();
