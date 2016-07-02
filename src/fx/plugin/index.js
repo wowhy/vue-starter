@@ -12,11 +12,8 @@ class PluginHelper {
     this.registerDirectives();
   }
 
-  initComponent(el) {
-    const query = window.$(el || 'body');
-
-    query.find('.dropdown-button').dropdown();
-    query.find('.collapsible').collapsible();
+  initJSComponents() {
+    // window.$.material.init();
   }
 
   registerComponents() {

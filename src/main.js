@@ -29,7 +29,7 @@ const application = Vue.extend({
   },
 
   ready() {
-    Plugin.initComponent(this.$el);
+    Plugin.initJSComponents();
   }
 });
 

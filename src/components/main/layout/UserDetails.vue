@@ -18,17 +18,26 @@
         </ul>
         <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn"
            href="javascript:void(0);"
-           data-activates="profile-dropdown">{{$auth.user.name}}<i class="material-icons right">arrow_drop_down</i>
+           data-activates="profile-dropdown">{{userName}}<i class="material-icons right">arrow_drop_down</i>
         </a>
 
-        <p class="user-roal">{{$auth.user.roleName}}</p>
+        <p class="user-roal">{{roleName}}</p>
       </div>
     </div>
   </li>
 </template>
 
 <script>
-  export default {};
+  import Auth from 'fx/auth';
+
+  export default {
+    data() {
+      return {
+        userName: Auth.user.name,
+        roleName: Auth.user.roleName
+      };
+    }
+  };
 </script>
 
 <style>
