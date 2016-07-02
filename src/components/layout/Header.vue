@@ -1,6 +1,7 @@
 <template>
   <header>
-    <nav class="top-nav green lighten-2">
+    <nav class="top-nav">
+      <a href="#/home" class="brand-logo">示例站点</a>
     </nav>
   </header>
 </template>
@@ -13,6 +14,6 @@
 <style>
   header > .top-nav {
     padding-left: 10px;
-    height: 55px;
+    background-color: #3c8dbc;
   }
 </style>

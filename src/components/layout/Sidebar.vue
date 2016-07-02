@@ -64,7 +64,7 @@
   }
 
   .left-sidebar-nav .side-nav {
-    top: 55px;
+    top: 64px;
   }
 
   .left-sidebar-nav .side-nav li a {
@@ -111,7 +111,7 @@
   .left-sidebar-nav .sidebar-collapse {
     position: absolute;
     left: -170px;
-    top: -45px;
+    top: -50px;
   }
 
   .left-sidebar-nav .collapsible-header:after {

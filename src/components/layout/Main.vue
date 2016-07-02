@@ -19,8 +19,8 @@
             </div>
           </div>
         </div>
-        <div class="container-fluid">
-          <router-view class="page-content"></router-view>
+        <div class="page-content container-fluid">
+          <router-view></router-view>
         </div>
       </section>
     </div>

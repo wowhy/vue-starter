@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import UI from 'material-ui-vue';
+import Loading from 'vue-loading';
 
 class PluginHelper {
   constructor() {
@@ -13,6 +14,18 @@ class PluginHelper {
       $('body').addClass('loaded');
     }, 200);
 
+    this.registerComponents();
+    this.registerDirectives();
+  }
+
+  initComponent(el) {
+    const query = window.$(el || 'body');
+
+    query.find('.dropdown-button').dropdown();
+    query.find('.collapsible').collapsible();
+  }
+
+  registerComponents() {
     // 注册组件
     /* eslint no-restricted-syntax: "off" */
     for (const prop in UI) {
@@ -26,11 +39,9 @@ class PluginHelper {
     }
   }
 
-  initComponent(el) {
-    const query = window.$(el || 'body');
-
-    query.find('.dropdown-button').dropdown();
-    query.find('.collapsible').collapsible();
+  registerDirectives() {
+    console.log(Loading);
+    Vue.directive('loading', Loading);
   }
 }
 

@@ -49,8 +49,11 @@
 
 <script>
   import Auth from 'fx/auth';
+  import PageBase from 'fx/page/base';
 
   export default {
+    extends: PageBase,
+
     name: 'login',
     methods: {
       onLoginClick: function handler() {
