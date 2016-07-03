@@ -18,7 +18,6 @@ const application = Vue.extend({
   },
   data() {
     return {
-      $auth: Auth,
       pageTitle: null
     };
   },
@@ -26,7 +25,7 @@ const application = Vue.extend({
   events: {
     pageTitleChange: function event(title) {
       this.pageTitle = title;
-    },
+    }
   },
 
   ready() {

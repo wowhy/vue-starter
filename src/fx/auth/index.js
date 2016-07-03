@@ -1,14 +1,7 @@
 /* eslint no-underscore-dangle: "off" */
 class AuthProvider {
   constructor() {
-    //this._user = {
-    //  id: '000000',
-    //  code: 'admin',
-    //  name: '超级用户',
-    //  roleCode: 'admin',
-    //  roleName: '超级管理员'
-    //};
-    //this._token = '123456';
+    // nothing
   }
 
   init(Vue, Router) {
@@ -19,7 +12,13 @@ class AuthProvider {
       if (transition.to.auth === false || $auth.check()) {
         transition.next();
       } else {
-        transition.redirect('/');
+        transition.redirect('/login');
+      }
+    });
+
+    Vue.mixin({
+      created: function handler() {
+        this.$auth = $auth;
       }
     });
   }
@@ -44,7 +43,24 @@ class AuthProvider {
     this._token = value;
   }
 
-  login() {
+  login(userName, password) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (userName || password) {
+          this._user = {
+            id: '000000',
+            code: 'admin',
+            name: userName,
+            roleCode: 'admin',
+            roleName: '超级管理员'
+          };
+          this._token = '123456';
+          resolve();
+        } else {
+          reject('用户名或密码不能为空！');
+        }
+      }, 500);
+    });
   }
 
   logout() {

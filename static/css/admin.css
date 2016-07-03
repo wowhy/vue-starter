@@ -4,6 +4,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #00AAEE;
+}
+
 .m-x-auto {
   margin-left: auto !important;
   margin-right: auto !important;

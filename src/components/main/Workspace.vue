@@ -1,7 +1,7 @@
 <template>
   <div class="body-wrapper">
-    <page-header></page-header>
-    <page-sidebar></page-sidebar>
+    <page-header v-if="authed"></page-header>
+    <page-sidebar v-if="authed"></page-sidebar>
     <page-main></page-main>
     <page-footer></page-footer>
   </div>
@@ -14,14 +14,27 @@
   import PageFooter from './layout/Footer'
 
   export default{
+    data() {
+      return {
+        authed: this.$root.$auth.check()
+      };
+    },
     components: {
       PageHeader,
       PageSidebar,
       PageMain,
       PageFooter
+    },
+    events: {
+      login() {
+        this.authed = true;
+      }
     }
   }
 </script>
 
 <style>
+  .body-wrapper {
+    width: 100%;
+  }
 </style>

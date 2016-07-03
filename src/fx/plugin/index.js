@@ -1,9 +1,8 @@
+import Vue from 'vue'
+import Loading from 'vue-loading'
+
 class PluginHelper {
   constructor() {
-    this.init();
-  }
-
-  init() {
     this.registerComponents();
     this.registerDirectives();
   }
@@ -15,6 +14,7 @@ class PluginHelper {
   }
 
   registerDirectives() {
+    Vue.directive('loading', Loading);
   }
 }
 

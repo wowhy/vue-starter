@@ -1,16 +1,18 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-import Home from 'components/main/Home';
+import Home from 'components/main/Home'
+import Login from 'components/main/Login'
 
 Vue.use(VueRouter);
 
 const Router = new VueRouter();
 
-Router.map({
-  '/home': {
-    component: Home
-  }
+[Home, Login].forEach((component) => {
+  Router.on(`/${component.name}`, {
+    component: component,
+    auth: component.auth
+  });
 });
 
 Router.redirect({

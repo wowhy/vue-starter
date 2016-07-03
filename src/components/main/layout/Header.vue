@@ -1,5 +1,10 @@
 <template>
   <header>
+    <nav>
+      <div class="nav-wrapper">
+        <a class="brand-logo">LOGO</a>
+      </div>
+    </nav>
   </header>
 </template>
 
