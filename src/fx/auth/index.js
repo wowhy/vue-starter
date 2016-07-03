@@ -1,24 +1,27 @@
 /* eslint no-underscore-dangle: "off" */
 class AuthProvider {
   constructor() {
-    this._user = {
-      id: '000000',
-      code: 'admin',
-      name: '超级用户',
-      roleCode: 'admin',
-      roleName: '超级管理员'
-    };
-    this._token = '123456';
+    //this._user = {
+    //  id: '000000',
+    //  code: 'admin',
+    //  name: '超级用户',
+    //  roleCode: 'admin',
+    //  roleName: '超级管理员'
+    //};
+    //this._token = '123456';
   }
 
-  init(/*Vue, Router*/) {
-    //Router.beforeEach(transition => {
-    //  if (transition.to.authed === false || this.check()) {
-    //    transition.next();
-    //  } else {
-    //    transition.redirect('/login');
-    //  }
-    //});
+  init(Vue, Router) {
+    /* eslint no-unused-vars : "off" */
+    /* eslint prefer-arrow-callback: "off" */
+    const $auth = this;
+    Router.beforeEach(function hook(transition) {
+      if (transition.to.auth === false || $auth.check()) {
+        transition.next();
+      } else {
+        transition.redirect('/');
+      }
+    });
   }
 
   check() {

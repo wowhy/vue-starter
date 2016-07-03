@@ -7,8 +7,9 @@ import Router from './router';
 import Plugin from './fx/plugin';
 
 Vue.config.devtools = true;
-Vue.use(VueResource);
+Vue.config.debug = true;
 
+Vue.use(VueResource);
 Auth.init(Vue, Router);
 
 const application = Vue.extend({
@@ -23,7 +24,7 @@ const application = Vue.extend({
   },
 
   events: {
-    onPageTitleChanged: function event(title) {
+    pageTitleChange: function event(title) {
       this.pageTitle = title;
     },
   },
