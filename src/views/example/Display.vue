@@ -1,10 +1,19 @@
 <template>
   <div>
-    <h3>Count is 0</h3>
+    <h3>Count is {{ counterValue }}</h3>
   </div>
 </template>
 
 <script>
-export default {
-}
+  import {
+    getCount
+  } from '../../vuex/getters'
+
+  export default {
+    vuex: {
+      getters: {
+        counterValue: getCount
+      }
+    }
+  }
 </script>
