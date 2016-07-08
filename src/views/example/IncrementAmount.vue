@@ -1,6 +1,6 @@
 <template>
   <div>
-    IncrementAmount: <input type="text" name="amount" :value="amountValue" @input="updateAmount">
+    IncrementAmount: <input type="text" name="amount" v-model="amount" number>
   </div>
 </template>
 
@@ -14,15 +14,25 @@
   } from '../../vuex/actions'
 
   export default {
+    computed: {
+      amount: {
+        get() {
+          return this.amountValue
+        },
+
+        set(value) {
+          this.updateAmount(value)
+        }
+      }
+    },
+
     vuex: {
       getters: {
         amountValue: getAmount
       },
 
       actions: {
-        updateAmount: function(arg1, e) {
-          updateAmount(arg1, parseInt(e.target.value))
-        }
+        updateAmount: updateAmount
       }
     }
   }
