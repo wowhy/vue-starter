@@ -10,6 +10,7 @@
   import IncrementAmount from './IncrementAmount'
 
   export default {
+    name: 'example',
     components: {
       Display,
       Increment,

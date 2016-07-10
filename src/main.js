@@ -9,8 +9,10 @@ Vue.use(VueRouter)
 
 const router = new VueRouter()
 
-router.on(Example.url, Example)
-router.on(Home.url, Home)
+router.map({
+  [Home.path]: Home,
+  [Example.path]: Example
+})
 
 router.redirect({
   '/': '/home'

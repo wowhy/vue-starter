@@ -1,5 +1,5 @@
 export default {
-  url: '/home',
+  path: '/home',
   name: 'home',
   component: resolve => require(['./Home'], resolve)
 }
