@@ -8,7 +8,11 @@ Vue.use(VueRouter)
 
 const router = new VueRouter()
 
-router.on(Example.url, Example)
+router.on(Example.path, Example)
+
+router.redirect({
+  '/': Example.path
+})
 
 router.start({
   components: {
