@@ -4,7 +4,6 @@ import App from './App'
 
 import Main from 'views/main/router'
 import Example from 'views/example/router'
-import Home from 'views/main/router'
 
 Vue.use(VueRouter)
 
