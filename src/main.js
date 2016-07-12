@@ -1,24 +1,16 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
 import App from './App'
+import router from './router'
+import auth from './utils/auth'
 
-import Main from 'views/main/router'
-import Example from 'views/example/router'
-
-Vue.use(VueRouter)
-
-const router = new VueRouter()
-
-;
-[Main, Example].forEach(config => {
-  router.on(config.path, config)
-})
-
-router.redirect({
-  '/': Main.path
-})
+auth.sync()
 
 router.start({
+  data() {
+    return {
+      auth
+    }
+  },
+
   components: {
     App
   }

@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <h1>This is Home Page</h1>
-  </div>
+  <aside>
+    <slot></slot>
+  </aside>
 </template>
 
 <script>
