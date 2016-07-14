@@ -3,6 +3,7 @@
     <app-header>
       <a v-link="{name: 'home'}">Home</a>
       <a v-link="{name: 'example'}">Example</a>
+      <a v-link="{name: 'greedy'}">Greedy</a>
     </app-header>
     <app-sidebar>
     </app-sidebar>

@@ -3,13 +3,14 @@ import VueRouter from 'vue-router'
 
 import Main from 'views/main/router'
 import Example from 'views/example/router'
+import Greedy from 'views/greedy/router'
 
 Vue.use(VueRouter)
 
 const router = new VueRouter()
 
 ;
-[Main, Example].forEach(config => {
+[Main, Example, Greedy].forEach(config => {
   router.on(config.path, config)
 })
 
