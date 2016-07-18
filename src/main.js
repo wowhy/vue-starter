@@ -13,5 +13,9 @@ router.start({
 
   components: {
     App
+  },
+
+  ready() {
+    document.body.classList.add('loaded')
   }
 }, 'html')
