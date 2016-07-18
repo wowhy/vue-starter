@@ -1,7 +1,7 @@
 <template>
- <footer>
-   <slot></slot>
- </footer>
+  <footer class="footer">
+    2016 © Adminto.
+  </footer>
 </template>
 
 <script>

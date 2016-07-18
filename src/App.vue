@@ -1,17 +1,20 @@
 <template>
-  <div class="body-wrapper">
-    <app-header>
-      <a v-link="{name: 'home'}">Home</a>
-      <a v-link="{name: 'example'}">Example</a>
-      <a v-link="{name: 'greedy'}">Greedy</a>
-    </app-header>
-    <app-sidebar>
-    </app-sidebar>
-    <main>
-      <router-view></router-view>
-    </main>
-    <app-footer></app-footer>
-  </div>
+    <div id="wrapper">
+        <app-header></app-header>
+        <app-sidebar></app-sidebar>
+
+        <div class="content-page">
+            <div class="content">
+                <div class="container">
+                    <div class="row">
+                        <router-view></router-view>
+                    </div>
+                </div>
+            </div>
+
+            <app-footer></app-footer>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -27,6 +30,10 @@
       AppSidebar,
       AppFooter
     },
-    store
+    store,
+    ready() {
+      window.$.Components.init()
+      window.$.App.init()
+    }
   }
 </script>

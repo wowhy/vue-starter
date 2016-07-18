@@ -1,3 +1,5 @@
+import './vendor'
+
 import App from './App'
 import router from './router'
 import auth from './utils/auth'
