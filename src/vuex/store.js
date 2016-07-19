@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 const state = {
   count: 0,
-  amount: 1
+  amount: 1,
+  authenticated: false
 }
 
 const mutations = {
@@ -15,6 +16,10 @@ const mutations = {
 
   UPDATE_AMOUNT(state, amount) {
     state.amount = amount
+  },
+
+  UPDATE_AUTHED(state, value) {
+    state.authenticated = value
   }
 }
 

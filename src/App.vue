@@ -1,20 +1,20 @@
 <template>
-    <div id="wrapper">
-        <app-header></app-header>
-        <app-sidebar></app-sidebar>
+  <div id="wrapper">
+    <app-header v-if="authenticated"></app-header>
+    <app-sidebar v-if="authenticated"></app-sidebar>
 
-        <div class="content-page">
-            <div class="content">
-                <div class="container">
-                    <div class="row">
-                        <router-view></router-view>
-                    </div>
-                </div>
-            </div>
-
-            <app-footer></app-footer>
+    <div :class="{ 'content-page' : authenticated }">
+      <div class="content">
+        <div class="container">
+          <div class="row">
+            <router-view></router-view>
+          </div>
         </div>
+      </div>
+
+      <app-footer v-if="authenticated"></app-footer>
     </div>
+  </div>
 </template>
 
 <script>
@@ -22,15 +22,22 @@
   import AppSidebar from './components/layout/sidebar'
   import AppFooter from './components/layout/footer'
 
-  import store from './vuex/store'
+  import {
+    getAuthed
+  } from './vuex/getters'
 
   export default {
+    vuex: {
+      getters: {
+        authenticated: getAuthed
+      }
+    },
+
     components: {
       AppHeader,
       AppSidebar,
       AppFooter
     },
-    store,
     ready() {
       window.$.Components.init()
       window.$.App.init()

@@ -4,7 +4,7 @@ export default {
   user: {},
 
   login(username, password) {
-    return new Promise((resolve, reject) => {
+    return new Promise(function (resolve, reject) {
       if (username === 'admin' && password === 'admin') {
         this.authenticated = true
 
@@ -14,12 +14,15 @@ export default {
           message: '用户名或密码错误!'
         })
       }
-    })
+    }.bind(this))
   },
 
   logout() {
-    this.authenticated = false
-    this.save()
+    return new Promise((resolve) => {
+      this.authenticated = false
+      this.save()
+      resolve()
+    })
   },
 
   check() {
@@ -28,6 +31,7 @@ export default {
 
   sync() {
     // TODO: 读取登录状态
+    return false
   },
 
   save() {

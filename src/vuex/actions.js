@@ -10,3 +10,7 @@ export const updateAmount = function ({
 }, value) {
   dispatch('UPDATE_AMOUNT', value)
 }
+
+export const updateAuthed = function ({ dispatch }, value) {
+  dispatch('UPDATE_AUTHED', value)
+}

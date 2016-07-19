@@ -5,3 +5,7 @@ export function getCount(state) {
 export function getAmount(state) {
   return state.amount
 }
+
+export function getAuthed(state) {
+  return state.authenticated
+}

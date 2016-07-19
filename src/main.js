@@ -3,19 +3,24 @@ import './vendor'
 import App from './App'
 import router from './router'
 import auth from './utils/auth'
+import store from './vuex/store'
 
-auth.sync()
+store.dispatch('UPDATE_AUTHED', auth.sync())
+
+router.beforeEach(function (transition) {
+  if (transition.to.name === 'login' || auth.check()) {
+    transition.next()
+  } else {
+    transition.redirect({ name: 'login' })
+  }
+})
 
 router.start({
-  data() {
-    return {
-      auth
-    }
-  },
-
   components: {
     App
   },
+
+  store,
 
   ready() {
     document.body.classList.add('loaded')
