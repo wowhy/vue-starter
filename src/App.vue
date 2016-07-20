@@ -22,14 +22,18 @@
   import AppSidebar from './components/layout/sidebar'
   import AppFooter from './components/layout/footer'
 
+  import Plugin from './utils/plugin'
+
   import {
-    getAuthed
+    getAuthed,
+    getToasts
   } from './vuex/getters'
 
   export default {
     vuex: {
       getters: {
-        authenticated: getAuthed
+        authenticated: getAuthed,
+        toasts: getToasts
       }
     },
 
@@ -41,6 +45,7 @@
     ready() {
       window.$.Components.init()
       window.$.App.init()
+      Plugin.init()
     }
   }
 </script>

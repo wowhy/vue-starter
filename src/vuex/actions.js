@@ -14,3 +14,11 @@ export const updateAmount = function ({
 export const updateAuthed = function ({ dispatch }, value) {
   dispatch('UPDATE_AUTHED', value)
 }
+
+export const addToast = function ({ dispatch }, message, type) {
+  dispatch('ADD_TOAST', message, type)
+}
+
+export const clearToasts = function ({ dispatch }) {
+  dispatch('CLEAR_TOASTS')
+}

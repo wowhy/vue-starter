@@ -6,7 +6,8 @@ Vue.use(Vuex)
 const state = {
   count: 0,
   amount: 1,
-  authenticated: false
+  authenticated: false,
+  toasts: []
 }
 
 const mutations = {
@@ -20,6 +21,16 @@ const mutations = {
 
   UPDATE_AUTHED(state, value) {
     state.authenticated = value
+  },
+
+  ADD_TOAST(state, message, type) {
+    state.toasts.push(window.toastr[type || 'success'](message))
+  },
+
+  CLEAR_TOASTS(state) {
+    state.toasts.forEach((toast) => {
+      window.toastr.clear(toast)
+    })
   }
 }
 

@@ -9,3 +9,7 @@ export function getAmount(state) {
 export function getAuthed(state) {
   return state.authenticated
 }
+
+export function getToasts(state) {
+  return state.toasts
+}

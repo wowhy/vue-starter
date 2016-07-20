@@ -17,7 +17,7 @@
           </li>
 
           <li>
-            <a href="javascript:void(0)" class="text-custom" @click="logout">
+            <a class="text-custom" v-link="{ name: 'login' }">
               <i class="zmdi zmdi-power"></i>
             </a>
           </li>
@@ -57,11 +57,5 @@
 </template>
 
 <script>
-  export default {
-    methods: {
-      logout() {
-        this.$route.router.go({ name: 'login' })
-      }
-    }
-  }
+  export default { }
 </script>
