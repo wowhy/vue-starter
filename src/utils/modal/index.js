@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Modal from 'components/modal'
 import extend from 'extend'
+import template from './template.html'
 
 export default {
   install(Vue) {
@@ -19,13 +20,16 @@ function modal(config, target) {
 
   let divEl = document.createElement('div')
   let vm = new Vue({
-    template: '<modal :show="show" :title="title" :force="force" @ok="handle(\'ok\')" @cancel="handle(\'cancel\')"><modal-body></modal-body></modal>',
+    template: template,
     replace: true,
     data() {
       return {
         title: config.title,
         show: false,
-        force: config.force
+        force: config.force,
+        large: config.large,
+        small: config.small,
+        full: config.full
       }
     },
     methods: {
