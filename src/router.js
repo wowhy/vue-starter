@@ -17,7 +17,7 @@ router.redirect({
 
 export default router
 
-function map (configs) {
+function map(configs) {
   configs.forEach(config => {
     if (Object.prototype.toString.call(config) !== '[object Array]') {
       router.on(config.path, config)

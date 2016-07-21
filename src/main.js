@@ -1,9 +1,14 @@
 import './vendor'
 
+import Vue from 'vue'
 import App from './App'
+import Modal from './utils/modal'
+
 import router from './router'
 import auth from './utils/auth'
 import store from './vuex/store'
+
+Vue.use(Modal)
 
 store.dispatch('UPDATE_AUTHED', auth.sync())
 

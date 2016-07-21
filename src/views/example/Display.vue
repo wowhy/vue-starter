@@ -1,10 +1,11 @@
-<template>
+<template>  
   <div>
     <h3>Count is {{ counterValue }}</h3>
   </div>
 </template>
 
-<script>
+
+<script type="text/javascript">
   import {
     getCount
   } from '../../vuex/getters'
@@ -17,3 +18,7 @@
     }
   }
 </script>
+
+<style type="text/css">
+
+</style>
