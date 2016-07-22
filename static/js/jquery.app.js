@@ -1,36 +1,34 @@
 /**
-* Theme: Adminto Admin Template
-* Author: Coderthemes
-* Module/App: Main Js
-*/
+ * Theme: Adminto Admin Template
+ * Author: Coderthemes
+ * Module/App: Main Js
+ */
 
-
-!function ($) {
+! function($) {
   "use strict";
 
-  var Sidemenu = function () {
-  };
-  Sidemenu.prototype.openLeftBar = function () {
-    $("#wrapper").toggleClass("enlarged");
-    $("#wrapper").addClass("forced");
+  var Sidemenu = function() {};
+  Sidemenu.prototype.openLeftBar = function() {
+      $("#wrapper").toggleClass("enlarged");
+      $("#wrapper").addClass("forced");
 
-    if ($("#wrapper").hasClass("enlarged") && $("body").hasClass("fixed-left")) {
-      $("body").removeClass("fixed-left").addClass("fixed-left-void");
-    } else if (!$("#wrapper").hasClass("enlarged") && $("body").hasClass("fixed-left-void")) {
-      $("body").removeClass("fixed-left-void").addClass("fixed-left");
-    }
+      if ($("#wrapper").hasClass("enlarged") && $("body").hasClass("fixed-left")) {
+        $("body").removeClass("fixed-left").addClass("fixed-left-void");
+      } else if (!$("#wrapper").hasClass("enlarged") && $("body").hasClass("fixed-left-void")) {
+        $("body").removeClass("fixed-left-void").addClass("fixed-left");
+      }
 
-    if ($("#wrapper").hasClass("enlarged")) {
-      $(".left ul").removeAttr("style");
-    } else {
-      $(".subdrop").siblings("ul:first").show();
-    }
+      if ($("#wrapper").hasClass("enlarged")) {
+        $(".left ul").removeAttr("style");
+      } else {
+        $(".subdrop").siblings("ul:first").show();
+      }
 
-    toggle_slimscroll(".slimscrollleft");
-    $("body").trigger("resize");
-  },
+      toggle_slimscroll(".slimscrollleft");
+      $("body").trigger("resize");
+    },
     //menu item click
-    Sidemenu.prototype.menuItemClick = function (e) {
+    Sidemenu.prototype.menuItemClick = function(e) {
       if (!$("#wrapper").hasClass("enlarged")) {
         if ($(this).parent().hasClass("has_sub")) {
 
@@ -55,7 +53,7 @@
     },
 
     //init sidemenu
-    Sidemenu.prototype.init = function () {
+    Sidemenu.prototype.init = function() {
       var $this = this;
 
       $this.$body = $("body"),
@@ -66,7 +64,7 @@
         event = (ua.match(/iP/i)) ? "touchstart" : "click";
 
       //bind on click
-      this.$openLeftBtn.on(event, function (e) {
+      this.$openLeftBtn.on(event, function(e) {
         e.stopPropagation();
         $this.openLeftBar();
       });
@@ -81,18 +79,16 @@
     //init Sidemenu
     $.Sidemenu = new Sidemenu, $.Sidemenu.Constructor = Sidemenu
 
-} (window.jQuery),
+}(window.jQuery),
 
+function($) {
+  "use strict";
 
-  function ($) {
-    "use strict";
+  var FullScreen = function() {};
 
-    var FullScreen = function () {
-    };
-
-    //turn on full screen
-    // Thanks to http://davidwalsh.name/fullscreen
-    FullScreen.prototype.launchFullscreen = function (element) {
+  //turn on full screen
+  // Thanks to http://davidwalsh.name/fullscreen
+  FullScreen.prototype.launchFullscreen = function(element) {
       if (element.requestFullscreen) {
         element.requestFullscreen();
       } else if (element.mozRequestFullScreen) {
@@ -103,64 +99,62 @@
         element.msRequestFullscreen();
       }
     },
-      FullScreen.prototype.exitFullscreen = function () {
-        if (document.exitFullscreen) {
-          document.exitFullscreen();
-        } else if (document.mozCancelFullScreen) {
-          document.mozCancelFullScreen();
-        } else if (document.webkitExitFullscreen) {
-          document.webkitExitFullscreen();
+    FullScreen.prototype.exitFullscreen = function() {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      }
+    },
+    //toggle screen
+    FullScreen.prototype.toggle_fullscreen = function() {
+      var $this = this;
+      var fullscreenEnabled = document.fullscreenEnabled || document.mozFullScreenEnabled || document.webkitFullscreenEnabled;
+      if (fullscreenEnabled) {
+        if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+          $this.launchFullscreen(document.documentElement);
+        } else {
+          $this.exitFullscreen();
         }
-      },
-      //toggle screen
-      FullScreen.prototype.toggle_fullscreen = function () {
-        var $this = this;
-        var fullscreenEnabled = document.fullscreenEnabled || document.mozFullScreenEnabled || document.webkitFullscreenEnabled;
-        if (fullscreenEnabled) {
-          if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
-            $this.launchFullscreen(document.documentElement);
-          } else {
-            $this.exitFullscreen();
-          }
-        }
-      },
-      //init sidemenu
-      FullScreen.prototype.init = function () {
-        var $this = this;
-        $this.$body = $("body"),
-          $this.$fullscreenBtn = $("#btn-fullscreen")
+      }
+    },
+    //init sidemenu
+    FullScreen.prototype.init = function() {
+      var $this = this;
+      $this.$body = $("body"),
+        $this.$fullscreenBtn = $("#btn-fullscreen")
 
-        //bind
-        $this.$fullscreenBtn.on('click', function () {
-          $this.toggle_fullscreen();
-        });
-      },
-      //init FullScreen
-      $.FullScreen = new FullScreen, $.FullScreen.Constructor = FullScreen
+      //bind
+      $this.$fullscreenBtn.on('click', function() {
+        $this.toggle_fullscreen();
+      });
+    },
+    //init FullScreen
+    $.FullScreen = new FullScreen, $.FullScreen.Constructor = FullScreen
 
-  } (window.jQuery),
+}(window.jQuery),
 
+//main app module
+function($) {
+  "use strict";
 
+  var App = function() {
+    this.VERSION = "1.3.0",
+      this.AUTHOR = "Coderthemes",
+      this.SUPPORT = "coderthemes@gmail.com",
+      this.pageScrollElement = "html, body",
+      this.$body = $("body")
+  };
 
-  //main app module
-  function ($) {
-    "use strict";
-
-    var App = function () {
-      this.VERSION = "1.3.0",
-        this.AUTHOR = "Coderthemes",
-        this.SUPPORT = "coderthemes@gmail.com",
-        this.pageScrollElement = "html, body",
-        this.$body = $("body")
-    };
-
-    //on doc load
-    App.prototype.onDocReady = function (e) {
+  //on doc load
+  App.prototype.onDocReady = function(e) {
       FastClick.attach(document.body);
       resizefunc.push("initscrolls");
       resizefunc.push("changeptype");
 
-      $('.animate-number').each(function () {
+      $('.animate-number').each(function() {
         $(this).animateNumbers($(this).attr("data-value"), true, parseInt($(this).attr("data-duration")));
       });
 
@@ -169,37 +163,34 @@
       $("body").trigger("resize");
 
       // right side-bar toggle
-      $('.right-bar-toggle').on('click', function (e) {
+      $('.right-bar-toggle').on('click', function(e) {
 
         $('#wrapper').toggleClass('right-bar-enabled');
       });
 
-
     },
-      //initilizing 
-      App.prototype.init = function () {
-        var $this = this;
-        //document load initialization
-        $(document).ready($this.onDocReady);
-        //init side bar - left
-        $.Sidemenu.init();
-        //init fullscreen
-        $.FullScreen.init();
-      },
+    //initilizing 
+    App.prototype.init = function() {
+      var $this = this;
+      //document load initialization
+      $(document).ready($this.onDocReady);
+      //init side bar - left
+      $.Sidemenu.init();
+      //init fullscreen
+      $.FullScreen.init();
+    },
 
-      $.App = new App, $.App.Constructor = App
+    $.App = new App, $.App.Constructor = App
 
-  } (window.jQuery);
-
-
+}(window.jQuery);
 
 /* ------------ some utility functions ----------------------- */
 //this full screen
-var toggle_fullscreen = function () {
+var toggle_fullscreen = function() {
 
 }
 
-function executeFunctionByName(functionName, context /*, args */) {
+function executeFunctionByName(functionName, context /*, args */ ) {
   var args = [].slice.call(arguments).splice(2);
   var namespaces = functionName.split(".");
   var func = namespaces.pop();
@@ -209,7 +200,7 @@ function executeFunctionByName(functionName, context /*, args */) {
   return context[func].apply(this, args);
 }
 var w, h, dw, dh;
-var changeptype = function () {
+var changeptype = function() {
   w = $(window).width();
   h = $(window).height();
   dw = $(document).width();
@@ -238,12 +229,12 @@ var changeptype = function () {
   toggle_slimscroll(".slimscrollleft");
 }
 
-
-var debounce = function (func, wait, immediate) {
+var debounce = function(func, wait, immediate) {
   var timeout, result;
-  return function () {
-    var context = this, args = arguments;
-    var later = function () {
+  return function() {
+    var context = this,
+      args = arguments;
+    var later = function() {
       timeout = null;
       if (!immediate) result = func.apply(context, args);
     };
@@ -280,6 +271,7 @@ function initscrolls() {
     });
   }
 }
+
 function toggle_slimscroll(item) {
   if ($("#wrapper").hasClass("enlarged")) {
     $(item).css("overflow", "inherit").parent().css("overflow", "inherit");
@@ -289,4 +281,3 @@ function toggle_slimscroll(item) {
     $(item).siblings(".slimScrollBar").css("visibility", "visible");
   }
 }
-

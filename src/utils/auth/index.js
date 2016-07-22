@@ -1,10 +1,12 @@
+import Promise from 'utils/promise'
+
 export default {
   authenticated: false,
   token: '',
   user: {},
 
   login(username, password) {
-    return new Promise(function (resolve, reject) {
+    return new Promise(function(resolve, reject) {
       if (username === 'admin' && password === 'admin') {
         this.authenticated = true
 

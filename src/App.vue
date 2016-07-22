@@ -43,8 +43,6 @@
       AppFooter
     },
     ready() {
-      window.$.Components.init()
-      window.$.App.init()
       Plugin.init()
     }
   }

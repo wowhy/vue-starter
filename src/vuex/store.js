@@ -24,7 +24,12 @@ const mutations = {
   },
 
   ADD_TOAST(state, message, type) {
-    state.toasts.push(window.toastr[type || 'success'](message))
+    let toastr
+    state.toasts.push((toastr = window.toastr[type || 'info'](message, '', {
+      onHidden() {
+        state.toasts.$remove(toastr)
+      }
+    })))
   },
 
   CLEAR_TOASTS(state) {

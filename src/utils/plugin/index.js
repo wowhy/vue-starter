@@ -1,6 +1,12 @@
 export default {
   init() {
     _initToast()
+    _initSweetAlert()
+
+    window.$.Components.init()
+    window.$.App.init()
+  }, initSidemenu() {
+    window.$.Sidemenu.init()
   }
 }
 
@@ -19,4 +25,13 @@ function _initToast() {
     'showMethod': 'fadeIn',
     'hideMethod': 'fadeOut'
   }
+}
+
+function _initSweetAlert() {
+  window.swal.setDefaults({
+    type: 'warning',
+    confirmButtonText: '确定',
+    cancelButtonText: '取消',
+    allowEscapeKey: false
+  })
 }
