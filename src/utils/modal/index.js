@@ -12,11 +12,11 @@ export default {
 function modal(config, target) {
   target = target || document.body
 
-  config = extend({}, config, {
+  config = extend({}, {
     title: '',
     autoDestroy: true,
     force: true
-  })
+  }, config)
 
   let divEl = document.createElement('div')
   let vm = new Vue({

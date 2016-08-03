@@ -39,7 +39,6 @@
       showModal() {
         let modal = Vue.modal({
           title: 'My Dialog',
-          full: true,
           template: '<h1>Hello, World!</h1>'
         })
 
