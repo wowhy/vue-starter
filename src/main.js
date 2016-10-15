@@ -1,35 +1,28 @@
-import './vendor'
-
 import Vue from 'vue'
+import Router from 'vue-router'
+import Resource from 'vue-resource'
+
 import App from './App'
-import Modal from './utils/modal'
-import Msg from './utils/msg'
 
-import router from './router'
-import auth from './utils/auth'
-import store from './vuex/store'
+import routes from './routes'
 
-Vue.use(Modal)
-Vue.use(Msg)
+Vue.use(Router)
+Vue.use(Resource)
 
-store.dispatch('UPDATE_AUTHED', auth.sync())
+const router = new Router({
+  base: '/',
+  mode: 'history',
+  linkActiveClass: 'is-active',
 
-router.beforeEach(function (transition) {
-  if (transition.to.name === 'login' || auth.check()) {
-    transition.next()
-  } else {
-    transition.redirect({ name: 'login' })
-  }
+  routes
 })
 
-router.start({
-  components: {
-    App
-  },
+// router.beforeEach((to, from, next) => {
+//   next()
+// })
 
-  store,
-
-  ready() {
-    document.body.classList.add('loaded')
-  }
-}, 'html')
+new Vue({
+  el: '#app',
+  router,
+  render: h => h(App)
+})
