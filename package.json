@@ -10,9 +10,14 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
+    "animate.css": "latest",
+    "bulma": "latest",
+    "font-awesome": "latest",
     "vue": "latest",
+    "vue-bulma-expanding": "github:vue-bulma/expanding",
     "vue-router": "latest",
-    "vue-resource": "latest"
+    "vue-resource": "latest",
+    "vuex": "latest"
   },
   "devDependencies": {
     "autoprefixer": "latest",
@@ -40,8 +45,10 @@
     "html-webpack-plugin": "latest",
     "http-proxy-middleware": "latest",
     "json-loader": "latest",
+    "node-sass": "latest",
     "opn": "latest",
     "ora": "latest",
+    "sass-loader": "latest",
     "shelljs": "latest",
     "url-loader": "latest",
     "vue-loader": "latest",
