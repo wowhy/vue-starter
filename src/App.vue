@@ -6,10 +6,14 @@
       <app-body></app-body>
       <app-footer></app-footer>
     </div>
+    <div class="wrapper" v-else>
+      <login></login>
+    </div>
   </div>
 </template>
 
 <script>
+  import store from './store'
   import {
     mapGetters
   } from 'vuex'
@@ -19,7 +23,7 @@
     AppBody,
     AppFooter
   } from './components/layout'
-  import store from './store'
+  import Login from './components/page/Login'
 
   export default {
     name: 'App',
@@ -28,7 +32,8 @@
       AppHeader,
       AppSidebar,
       AppBody,
-      AppFooter
+      AppFooter,
+      Login
     },
     data() {
       return {}
@@ -64,7 +69,8 @@
 
 <style lang="scss">
   $fa-font-path: '~font-awesome/fonts/';
-  $family-primary: "Microsoft YaHei", sans-serif;
+  $family-primary: "Microsoft YaHei",
+  sans-serif;
   @import '~animate.css';
   @import '~bulma';
   @import '~font-awesome/scss/font-awesome';

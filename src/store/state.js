@@ -3,11 +3,12 @@ const state = {
     mobile: false,
     sidebar: true
   },
-  authed: true,
+  authed: false,
   menus: [{
     name: 'UI组件',
     icon: 'laptop',
     children: [{
+      code: 'Buttons',
       name: 'Buttons',
       url: '/buttons'
     }]
