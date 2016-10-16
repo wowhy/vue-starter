@@ -27,7 +27,6 @@ router.beforeEach((to, from, next) => {
   }
 
   if (store.getters.authed) {
-    debugger
     let menus = store.getters.menus
     let menu = find(menus, to.name)
     if (menu) {
