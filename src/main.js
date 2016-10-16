@@ -10,7 +10,7 @@ Vue.use(Router)
 Vue.use(Resource)
 
 const router = new Router({
-  base: '/',
+  base: '',
   mode: 'history',
   linkActiveClass: 'is-active',
 

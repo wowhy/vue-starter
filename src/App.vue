@@ -40,21 +40,39 @@
       ])
     },
     beforeMount() {
+      const config = this.config
+      const {
+        body
+      } = document
+      const WIDTH = 768
+      const RATIO = 3
 
+      const handler = () => {
+        if (!document.hidden) {
+          let rect = body.getBoundingClientRect()
+          config.mobile = rect.width - RATIO < WIDTH
+          config.sidebar = !config.mobile
+        }
+      }
+
+      document.addEventListener('visibilitychange', handler)
+      window.addEventListener('DOMContentLoaded', handler)
+      window.addEventListener('resize', handler)
     }
   }
 </script>
 
 <style lang="scss">
+  $fa-font-path: '~font-awesome/fonts/';
+  $family-primary: "Microsoft YaHei", sans-serif;
   @import '~animate.css';
   @import '~bulma';
-  $fa-font-path: '~font-awesome/fonts/';
   @import '~font-awesome/scss/font-awesome';
   html,
   body {
     margin: 0;
     overflow: hidden;
-    font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", Arial, sans-serif;
+    font-family: $family-primary;
   }
   
   .animated {

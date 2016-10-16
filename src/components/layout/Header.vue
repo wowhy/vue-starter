@@ -8,7 +8,7 @@
             Vue-Starter
           </a>
         </div>
-        <span class="nav-toggle">
+        <span class="nav-toggle" @click="toggleSidebar()">
           <span></span>
           <span></span>
           <span></span>
@@ -21,7 +21,17 @@
 </template>
 
 <script>
-  export default {}
+  import {
+    mapActions
+  } from 'vuex'
+
+  export default {
+    methods: {
+      ...mapActions([
+        'toggleSidebar'
+      ])
+    }
+  }
 </script>
 
 <style>
