@@ -13,8 +13,16 @@
           <span></span>
           <span></span>
         </span>
-        <div class="nav-right">
+      <div class="nav-right nav-menu">
+        <div class="nav-item">
+          <figure class="image is-24x24 is-right-5"><img class="is-circle" src="../../assets/images/logo.png"></figure>
+          <span>Jone Smith</span>
         </div>
+        <a class="nav-item" @click="logout()">
+          <span class="icon is-small"><i class="fa fa-power-off"></i></span>
+          注销
+        </a>
+      </div>
       </nav>
     </div>
   </section>
@@ -24,12 +32,18 @@
   import {
     mapActions
   } from 'vuex'
+  import auth from '../../utils/auth'
 
   export default {
     methods: {
       ...mapActions([
         'toggleSidebar'
-      ])
+      ]),
+      logout() {
+        auth.logout().then(() => {
+          this.$store.commit('authed', false)
+        })
+      }
     }
   }
 </script>
