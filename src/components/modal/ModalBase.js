@@ -40,6 +40,7 @@
       })
     },
     destroyed() {
-      this.$el.remove()
+      // this.$el.remove()
+      this.$el.parentElement.removeChild(this.$el)
     }
   }

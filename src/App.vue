@@ -68,12 +68,7 @@
 </script>
 
 <style lang="scss">
-  $fa-font-path: '~font-awesome/fonts/';
-  $family-primary: "Microsoft YaHei",
-  sans-serif;
-  @import '~animate.css';
-  @import '~bulma';
-  @import '~font-awesome/scss/font-awesome';
+  @import './assets/styles/core';
   html,
   body {
     margin: 0;

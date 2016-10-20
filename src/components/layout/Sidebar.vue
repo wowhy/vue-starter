@@ -46,15 +46,13 @@
                 <i class="fa fa-angle-down"></i>
               </span>
             </a>
-            <expanding v-if="menu.children && menu.children.length">
-              <ul v-show="isExpanded(menu)">
-                <li v-for="subMenu in menu.children">
-                  <router-link :to="subMenu.url">
-                    {{subMenu.name}}
-                  </router-link>
-                </li>
-              </ul>
-            </expanding>
+            <ul v-show="isExpanded(menu)">
+              <li v-for="subMenu in menu.children">
+                <router-link :to="subMenu.url">
+                  {{subMenu.name}}
+                </router-link>
+              </li>
+            </ul>
           </div>
         </li>
       </ul>
@@ -66,12 +64,9 @@
   import {
     mapGetters
   } from 'vuex'
-  import Expanding from 'vue-bulma-expanding'
 
   export default {
-    components: {
-      Expanding
-    },
+    components: {},
     props: {
       show: Boolean
     },

@@ -1,3 +1,5 @@
+import 'core-js/es6/array'
+
 import Vue from 'vue'
 import Router from 'vue-router'
 import Resource from 'vue-resource'
@@ -23,14 +25,14 @@ store.commit('authed', auth.sync())
 
 router.beforeEach((to, from, next) => {
   if (to.meta.authed || to.name === 'Home') {
-    next()
+    return next()
   }
 
   if (store.getters.authed) {
     let menus = store.getters.menus
     let menu = find(menus, to.name)
     if (menu) {
-      next()
+      return next()
     }
   }
 })
